@@ -1,0 +1,9 @@
+.video-item {
+  width: 22%;
+  margin-bottom: 20px;
+}
+
+.video-item img {
+  width: 100%;
+  border-radius: 10px;
+}

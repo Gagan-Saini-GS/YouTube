@@ -1,0 +1,17 @@
+.history-heading {
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 20px;
+}
+
+.history-video-container {
+  display: flex;
+  /* justify-content: space-around; */
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.history-video-container .video-item {
+  margin-right: 2.5rem;
+}

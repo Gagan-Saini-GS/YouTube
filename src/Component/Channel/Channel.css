@@ -1,0 +1,48 @@
+.channel-container {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  width: 40%;
+}
+
+.channel-logo-container {
+  width: 15%;
+  margin-right: 20px;
+}
+
+.channel-logo-container img {
+  width: 100%;
+  border-radius: 50%;
+  display: block;
+}
+
+.channel-detail-container {
+  width: 70%;
+}
+
+.channel-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.channel-sub-count {
+  font-size: 0.75rem;
+  opacity: 0.75;
+}
+
+.subscribe-button {
+  border-radius: 100px;
+  padding: 0.5rem 1rem;
+  background-color: red;
+  color: whitesmoke;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-right: auto;
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.subscribed {
+  background-color: rgba(255, 255, 255, 0.1);
+}

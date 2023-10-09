@@ -1,0 +1,35 @@
+.subscription-container {
+  padding: 5px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sub-heading {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.subscribed-channel-container {
+  height: 300px;
+  overflow-y: scroll;
+}
+
+.subscribed-channel {
+  display: flex;
+  align-items: center;
+  padding-bottom: 0.65rem;
+  width: 100%;
+}
+
+.subscribed-channel img {
+  width: 16%;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.subscribed-channel .channel-name {
+  font-size: 1rem;
+  font-weight: 600;
+}
