@@ -12,6 +12,7 @@ import ThemeContext from "../../Context/ThemeContext";
 import SearchContext from "../../Context/SearchContext";
 import { useNavigate } from "react-router-dom";
 import SidebarContext from "../../Context/SidebarContext";
+import UserProfileImage from "../../assets/images/userprofileimage.jpg";
 
 const Navbar = () => {
   const [inputValue, setInputValue] = useState("");
@@ -81,7 +82,7 @@ const Navbar = () => {
           <NotificationsIcon />
         </div>
         <div className="menu-item">
-          <Avatar src={userImage} alt="GS" />
+          <Avatar src={userImage || UserProfileImage} alt="GS" />
         </div>
       </div>
     </div>

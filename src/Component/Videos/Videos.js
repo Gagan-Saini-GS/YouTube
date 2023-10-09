@@ -10,6 +10,7 @@ import SidebarContext from "../../Context/SidebarContext";
 const Videos = () => {
   const [allVideos, setAllVideos] = useState([]);
   const [allIds, setAllIds] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   const [nextPageToken, setNextPageToken] = useState("");
 
   const { theme } = useContext(ThemeContext);
@@ -17,6 +18,10 @@ const Videos = () => {
   const { sideBarVisiable } = useContext(SidebarContext);
 
   const getVideos = async (showMore) => {
+    if (isLoading) return;
+
+    setIsLoading(true);
+
     const query = searchText;
     const arr = [];
 
@@ -36,6 +41,8 @@ const Videos = () => {
       else setAllIds([...arr]);
     } catch (error) {
       console.log(error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -68,6 +75,27 @@ const Videos = () => {
       })
       .catch((err) => console.log(err));
   }, [allIds]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Check if the user is near the bottom of the page
+      if (
+        window.innerHeight + window.scrollY >=
+        document.documentElement.scrollHeight - 200
+      ) {
+        // Call the next function to apply infinite scroll
+        // I'm not calling it for saving my Daily YouTube API Quota
+        // Because on the development day of this feature I exceeded my quota in just one scroll.
+        // It's tested just turn it on we you want to use it.
+        // getVideos(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [nextPageToken]);
 
   return (
     <div

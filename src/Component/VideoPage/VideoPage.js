@@ -12,6 +12,7 @@ import axios from "axios";
 import { BASE_URL, API_KEY } from "../../config";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
+import UserImg from "../../assets/images/userprofileimage.jpg";
 
 const VideoPlayer = ({ videoId }) => {
   // Initialize a property to hold the player instance
@@ -98,7 +99,8 @@ const CommentCard = ({ comment }) => {
       <div className="c-profileImg-container">
         <img
           src={
-            comment?.snippet?.topLevelComment?.snippet?.authorProfileImageUrl
+            comment?.snippet?.topLevelComment?.snippet?.authorProfileImageUrl ||
+            UserImg
           }
           alt="USER_IMG"
         />
